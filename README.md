@@ -17,7 +17,7 @@ This project implements a **Small Office/Home Office (SOHO)** network with three
 
 ## Network Topology
 
-![Network Topology](diagram.png)
+[Network Topology](https://github.com/mohabashir17/SOHO-ROAS-InterVLAN-Wireless/blob/main/Topology.png)
 
 ---
 
@@ -46,6 +46,7 @@ This project implements a **Small Office/Home Office (SOHO)** network with three
 
 ---
 
+
 ## Verification
 
 All verification outputs are available here:  
@@ -68,7 +69,7 @@ All device configurations can be accessed here:
 
 ### Steps
 1. Clone or download this repository  
-2. Open `topology.pkt` in Cisco Packet Tracer  
+2. Open `SOHO.pkt` in Cisco Packet Tracer  
 3. Allow devices to fully boot  
 4. Test connectivity between VLANs  
 
@@ -78,8 +79,8 @@ All device configurations can be accessed here:
 
 ```text
 SOHO-ROAS-InterVLAN-Wireless/
-├── topology.pkt
-├── diagram.png
+├── SOHO.pkt
+├── Topology.png
 ├── README.md
 ├── Verfications.md
 └── Configs/
