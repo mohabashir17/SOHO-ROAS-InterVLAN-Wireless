@@ -6,7 +6,7 @@
 
 ## Project Overview
 
-This project implements a **Small Office/Home Office (SOHO)** network with three departments: Guest/Sales (VLAN 10), IT (VLAN 20), and Management (VLAN 30). The network features:
+This project implements a **Small Office/Home Office (SOHO)** network with three departments: Guest/Sales (VLAN 10), IT (VLAN 20), and Administration (VLAN 30). The network features:
 
 - **Router-on-a-Stick (ROAS)** for inter-VLAN routing
 - **802.1Q trunking** between switch and router
@@ -23,11 +23,11 @@ This project implements a **Small Office/Home Office (SOHO)** network with three
 
 ## IP Addressing Scheme
 
-| Department | VLAN ID | Subnet | CIDR | Gateway | Host Range |
-|------------|---------|--------|------|---------|------------|
-| Guest/Sales | 10 | 192.168.1.0 | /26 | 192.168.1.1 | .1 - .62 |
-| IT | 20 | 192.168.1.64 | /26 | 192.168.1.65 | .65 - .126 |
-| Management | 30 | 192.168.1.128 | /26 | 192.168.1.129 | .129 - .190 |
+| Department     | VLAN ID | Subnet         | CIDR | Gateway         | Host Range     |
+|----------------|--------|----------------|------|------------------|----------------|
+| Guest/Sales    | 10     | 192.168.1.0    | /26  | 192.168.1.1      | .1 - .62       |
+| IT             | 20     | 192.168.1.64   | /26  | 192.168.1.65     | .65 - .126     |
+| Administration | 30     | 192.168.1.128  | /26  | 192.168.1.129    | .129 - .190    |
 
 **Subnet Mask:** 255.255.255.192  
 **Available IPs per subnet:** 62
@@ -36,29 +36,63 @@ This project implements a **Small Office/Home Office (SOHO)** network with three
 
 ## Technologies Implemented
 
-| Technology | Purpose |
-|------------|---------|
-| VLAN 10, 20, 30 | Department isolation |
-| 802.1Q Trunking | Carry multiple VLANs to router |
-| Router-on-a-Stick (ROAS) | Inter-VLAN routing using subinterfaces |
-| Wireless Access Points | Department-specific WiFi |
-| DHCP (optional) | Dynamic IP allocation |
+| Technology                 | Purpose                          |
+|--------------------------|----------------------------------|
+| VLAN 10, 20, 30          | Department isolation             |
+| 802.1Q Trunking          | Carry multiple VLANs to router   |
+| Router-on-a-Stick (ROAS) | Inter-VLAN routing               |
+| Wireless Access Points   | Department-specific WiFi         |
+| DHCP (optional)          | Dynamic IP allocation            |
 
 ---
 
-## Router Configuration (ROAS)
-interface GigabitEthernet0/0.10
-encapsulation dot1Q 10
-ip address 192.168.1.1 255.255.255.192
-no shutdown
+## Verification
 
-interface GigabitEthernet0/0.20
-encapsulation dot1Q 20
-ip address 192.168.1.65 255.255.255.192
-no shutdown
+All verification outputs are available here:  
+👉 [View Verification Results](https://github.com/mohabashir17/SOHO-ROAS-InterVLAN-Wireless/blob/main/Verfications.md)
 
-interface GigabitEthernet0/0.30
-encapsulation dot1Q 30
-ip address 192.168.1.129 255.255.255.192
-no shutdown
+---
 
+## Configurations
+
+All device configurations can be accessed here:  
+👉 [View Device Configurations](https://github.com/mohabashir17/SOHO-ROAS-InterVLAN-Wireless/tree/main/Configs)
+
+---
+
+## How to Use This Project
+
+### Prerequisites
+- Cisco Packet Tracer 8.0 or higher  
+- Basic understanding of VLANs and routing  
+
+### Steps
+1. Clone or download this repository  
+2. Open `topology.pkt` in Cisco Packet Tracer  
+3. Allow devices to fully boot  
+4. Test connectivity between VLANs  
+
+---
+
+## Project Structure
+
+```text
+SOHO-ROAS-InterVLAN-Wireless/
+├── topology.pkt
+├── diagram.png
+├── README.md
+├── Verfications.md
+└── Configs/
+```
+
+---
+
+## Author
+
+Mohamed Bashir Ali
+
+---
+
+## License
+
+This project is for educational and portfolio purposes.
