@@ -1,0 +1,39 @@
+# Verification Outputs
+
+---
+
+## 1. VLAN Configuration (SW1)
+
+```bash
+SW1#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/10, Fa0/11, Fa0/12, Fa0/13
+                                                Fa0/14, Fa0/15, Fa0/16, Fa0/17
+                                                Fa0/18, Fa0/19, Fa0/20, Fa0/21
+                                                Fa0/22, Fa0/23, Fa0/24, Gig0/2
+10   Guest/Sales                     active    Fa0/1, Fa0/2, Fa0/3
+20   IT                              active    Fa0/4, Fa0/5, Fa0/6
+30   Administration                  active    Fa0/7, Fa0/8, Fa0/9
+1002 fddi-default                    active    
+1003 token-ring-default             active    
+1004 fddinet-default                active    
+1005 trnet-default                  active    
+SW1#
+
+2. Trunk Interface (SW1 ↔ R1)
+
+SW1#show interfaces trunk
+
+Port        Mode         Encapsulation  Status        Native vlan
+Gig0/1      on           802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Gig0/1      10,20,30
+
+Port        Vlans allowed and active in management domain
+Gig0/1      10,20,30
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Gig0/1      10,20,30
